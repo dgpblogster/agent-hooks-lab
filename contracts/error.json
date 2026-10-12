@@ -1,0 +1,17 @@
+{
+  "eventType": "Error",
+  "runsWhen": "The agent encounters an error outside of a tool call.",
+  "canBlock": false,
+  "scopableToTools": false,
+  "inputs": [
+    { "name": "error", "description": "The error message. Treat it as untrusted diagnostic content." },
+    { "name": "errorContext", "description": "Where the error happened, so the workflow can branch on the failing stage." },
+    { "name": "recoverable", "description": "Whether the agent believes the operation can be retried. Advisory only." }
+  ],
+  "outputs": [
+    { "name": "errorHandling", "description": "How to proceed: retry, skip, or abort. Leave empty for default handling.", "allowedValues": ["retry", "skip", "abort"] },
+    { "name": "retryCount", "description": "How many times to retry. Only used when errorHandling is retry." },
+    { "name": "userNotification", "description": "A short, user-friendly message shown to the user about the error." },
+    { "name": "suppressOutput", "description": "Set to true to hide this turn's output from the user." }
+  ]
+}

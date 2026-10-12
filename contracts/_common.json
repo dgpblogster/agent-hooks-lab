@@ -1,0 +1,24 @@
+{
+  "source": "https://learn.microsoft.com/microsoft-copilot-studio/agents-experience/hooks-overview",
+  "appliesTo": "Every hook event. Each event's own contract file lists what it adds on top of these.",
+  "inputs": [
+    { "name": "event", "description": "The name of the event, such as PreTool. Useful when one workflow handles more than one hook event." },
+    { "name": "timestamp", "description": "When the agent raised the event." },
+    { "name": "metadata", "description": "Context about the conversation, user, channel and agent. An object; see metadataFields." }
+  ],
+  "metadataFields": [
+    { "name": "conversationId", "description": "Unique ID of the current session." },
+    { "name": "userId", "description": "ID of the user in the channel they're chatting on, such as their Microsoft Teams user ID. Use userAadObjectId to identify a signed-in user." },
+    { "name": "userAadObjectId", "description": "Microsoft Entra object ID of the signed-in user." },
+    { "name": "userDisplayName", "description": "Display name of the signed-in user." },
+    { "name": "channel", "description": "The channel the conversation is on, such as msteams." },
+    { "name": "agentId", "description": "Unique ID of the agent that raised the hook." },
+    { "name": "agentName", "description": "Display name of the agent that raised the hook." },
+    { "name": "agentSchemaName", "description": "Schema name of the agent that raised the hook." }
+  ],
+  "notes": [
+    "Any metadata field can be empty. The user fields are empty when the person chatting isn't signed in.",
+    "All outputs on every event are optional. An empty output means the agent continues with its default behavior.",
+    "Keep the starter workflow's input and output field names. Copilot Studio uses them to decide whether a workflow fits the event."
+  ]
+}

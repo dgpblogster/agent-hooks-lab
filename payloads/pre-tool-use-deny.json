@@ -1,0 +1,4 @@
+{
+  "permissionDecision": "deny",
+  "permissionDecisionReason": "External recipients are not allowed from this agent. Offer to draft the message so the user can send it from Outlook."
+}

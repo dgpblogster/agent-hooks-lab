@@ -1,0 +1,18 @@
+{
+  "eventType": "Pre tool use",
+  "eventValueExample": "PreTool",
+  "runsWhen": "Before the agent calls a tool.",
+  "canBlock": true,
+  "scopableToTools": true,
+  "inputs": [
+    { "name": "toolName", "description": "Name of the tool the agent is about to call." },
+    { "name": "parameters", "description": "The arguments the agent wants to pass to the tool. Its internal shape per tool is not documented; inspect one run before you write conditions against it." }
+  ],
+  "outputs": [
+    { "name": "permissionDecision", "description": "Set to deny to block the tool call. Leave empty to allow it.", "allowedValues": ["deny"] },
+    { "name": "permissionDecisionReason", "description": "Why the call was blocked. Only used when denying." },
+    { "name": "modifiedParameters", "description": "Replacement arguments for the tool call. Leave empty to keep the original." },
+    { "name": "additionalContext", "description": "Extra text passed to the model alongside the tool call." },
+    { "name": "suppressOutput", "description": "Set to true to hide this tool's output from the user." }
+  ]
+}

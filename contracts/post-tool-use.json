@@ -1,0 +1,16 @@
+{
+  "eventType": "Post tool use",
+  "runsWhen": "After a tool finishes successfully.",
+  "canBlock": false,
+  "scopableToTools": true,
+  "inputs": [
+    { "name": "toolName", "description": "Name of the tool that just ran." },
+    { "name": "parameters", "description": "The arguments the tool was called with." },
+    { "name": "result", "description": "The result the tool returned." }
+  ],
+  "outputs": [
+    { "name": "modifiedResult", "description": "Replacement result handed to the model. Leave empty to keep the original." },
+    { "name": "additionalContext", "description": "Extra text passed to the model alongside the result." },
+    { "name": "suppressOutput", "description": "Set to true to hide this tool's output from the user." }
+  ]
+}

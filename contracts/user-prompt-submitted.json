@@ -1,0 +1,13 @@
+{
+  "eventType": "User prompt submitted",
+  "runsWhen": "Each time the user sends a message, before the agent processes it.",
+  "canBlock": false,
+  "scopableToTools": false,
+  "inputs": [
+    { "name": "prompt", "description": "The prompt text the user submitted. Treat it as untrusted user input." }
+  ],
+  "outputs": [
+    { "name": "modifiedPrompt", "description": "Replacement prompt the agent processes instead of what the user typed. Leave empty to keep the original." },
+    { "name": "suppressOutput", "description": "Set to true to hide this turn's output from the user." }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "eventType": "Start (pre-loop)",
+  "runsWhen": "A new conversation with the agent begins, before the user's first message.",
+  "canBlock": false,
+  "scopableToTools": false,
+  "inputs": [],
+  "outputs": [
+    { "name": "additionalContext", "description": "Background text given to the model for this session. Leave empty for none." }
+  ]
+}

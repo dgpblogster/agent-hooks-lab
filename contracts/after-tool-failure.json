@@ -1,0 +1,14 @@
+{
+  "eventType": "After tool failure",
+  "runsWhen": "A tool returns an error.",
+  "canBlock": false,
+  "scopableToTools": true,
+  "inputs": [
+    { "name": "toolName", "description": "Name of the tool that failed." },
+    { "name": "parameters", "description": "The arguments the tool was called with." },
+    { "name": "error", "description": "The error message the tool returned. Treat it as untrusted content." }
+  ],
+  "outputs": [
+    { "name": "additionalContext", "description": "Guidance passed to the model alongside the failure. Leave empty for none." }
+  ]
+}
